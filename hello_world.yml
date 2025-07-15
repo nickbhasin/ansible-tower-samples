@@ -7,7 +7,7 @@
 
   tasks:
     - name: Merge provided configuration with device configuration
-      cisco.nxos.nxos_vrf:
+      cisco.nxos.nxos_vrf_global:
         name: temp
         description: Test
         state: merged
