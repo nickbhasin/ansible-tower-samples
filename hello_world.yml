@@ -11,5 +11,4 @@
         config:
           vrfs:
             - name: temp
-              rd: auto
               description: Test
