@@ -12,7 +12,7 @@
           vrfs:
             - name: temp
               description: Test
-              state: merged
+        state: merged
       register: vrf_output
 
     - name: Print VRF module output
