@@ -1,14 +1,10 @@
----
-- name: Replace the provided configuration with the existing running configuration
-  hosts: nxos
-  gather_facts: False
-  collections:
-    - cisco.nxos
+- name: Merge provided configuration with device configuration
+  cisco.nxos.nxos_vrf:
+    name: temp
+    description: Test
+    state: merged
+  register: vrf_output
 
-  tasks:
-    - name: Merge provided configuration with device configuration
-      cisco.nxos.nxos_vrf_global:
-        config:
-          vrfs:
-            - name: temp
-              description: Test
+- name: Print VRF module response
+  debug:
+    var: vrf_output
